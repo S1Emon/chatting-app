@@ -1,0 +1,48 @@
+/* Common css start */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+:root {
+  --primary-font: "Poppins", sans-serif;
+  --primary-color: #5f35f5;
+  --secondary-font: "Open Sans", sans-serif;
+  --third-font: "Nunito", sans-serif;
+  --primary-text-color: #11175d;
+  --secondary-color: #03014c;
+  --secondary-text-color: #64699d;
+  --blue: #6d67e4;
+  --border-color: #11175d;
+  --error: #ea6c00;
+  --white: #fff;
+  --black: #000;
+  --green: #00ff75;
+  --secondary-white: #f1f1f1;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+.main_box {
+  height: 100vh;
+}
+
+.error-message {
+  font-family: var(--secondary-font);
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+/* Common css end */
