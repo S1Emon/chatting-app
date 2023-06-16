@@ -32,6 +32,8 @@ const Chatting = () => {
   const [openCam, setOpenCam] = useState(false);
   const [msg, setMsg] = useState("");
   const [msgList, setMsgList] = useState([]);
+  const [grpmsgList, setGrpmsgList] = useState([]);
+  const [grpMembers, setGrpMembers] = useState([]);
   const scrollMsg = useRef();
   const [captureImage, setCaptureImage] = useState("");
   const [audioURL, setAudioURL] = useState("");
@@ -115,7 +117,7 @@ const Chatting = () => {
     }
   };
 
-  // show all message
+  // show single message
   useEffect(() => {
     onValue(ref(db, "singlemsg"), (snapshot) => {
       let singlemsgArr = [];
@@ -130,7 +132,28 @@ const Chatting = () => {
         }
         setMsgList(singlemsgArr);
       });
-      // console.log(singlemsgArr);
+    });
+  }, [activeChatName?.id]);
+
+  // get group members
+  useEffect(() => {
+    onValue(ref(db, "groupmembers"), (snapshot) => {
+      let membersArr = [];
+      snapshot.forEach((item) => {
+        membersArr.push(item.val().groupid + item.val().userid);
+      });
+      setGrpMembers(membersArr);
+    });
+  }, [activeChatName?.id]);
+
+  // show group message
+  useEffect(() => {
+    onValue(ref(db, "groupmsg"), (snapshot) => {
+      let groupmsgArr = [];
+      snapshot.forEach((item) => {
+        groupmsgArr.push(item.val());
+      });
+      setGrpmsgList(groupmsgArr);
     });
   }, [activeChatName?.id]);
 
@@ -289,7 +312,34 @@ const Chatting = () => {
                   )}
                 </div>
               ))
-            : "group message"}
+            : user.uid === activeChatName?.adminid ||
+              grpMembers.includes(activeChatName?.id + user.uid)
+            ? grpmsgList.map((item, i) => (
+                <div key={i}>
+                  {item.whosendid === user.uid
+                    ? item.whoreceiveid === activeChatName?.id && (
+                        <div className="sender-msg" key={i}>
+                          <div className="sender-text">
+                            <p>{item.msg}</p>
+                          </div>
+                          <span>
+                            {moment(item.date, "YYYYMMDD h:mm").fromNow()}
+                          </span>
+                        </div>
+                      )
+                    : item.whoreceiveid === activeChatName?.id && (
+                        <div className="receiver-msg" key={i}>
+                          <div className="receiver-text">
+                            <p>{item.msg}</p>
+                          </div>
+                          <span>
+                            {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                          </span>
+                        </div>
+                      )}
+                </div>
+              ))
+            : "mmbr e nah se"}
         </div>
 
         <div className="message-input">
