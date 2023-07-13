@@ -51,9 +51,9 @@ const MsgGroup = () => {
               <h4>{item.groupname}</h4>
               <p>{item.grouptag}</p>
             </div>
-            <div className="msggrp-btn">
+            {/* <div className="msggrp-btn">
               <button type="button">Reject</button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

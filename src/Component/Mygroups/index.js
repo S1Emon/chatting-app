@@ -101,7 +101,7 @@ const Mygroups = () => {
         </div>
         {show && (
           <button
-            className="goback-btn"
+            className="goback-button"
             type="button"
             onClick={() => setShow(false)}
           >
@@ -110,7 +110,7 @@ const Mygroups = () => {
         )}
         {member && (
           <button
-            className="goback-btn"
+            className="goback-button"
             type="button"
             onClick={() => setMember(false)}
           >
@@ -174,7 +174,11 @@ const Mygroups = () => {
               </div>
 
               <div className="mygrp-btn">
-                <button type="button" onClick={() => handleMemberShow(item)}>
+                <button
+                  className="info-btn"
+                  type="button"
+                  onClick={() => handleMemberShow(item)}
+                >
                   Info
                 </button>
                 <button type="button" onClick={() => handleReqShow(item)}>

@@ -14,7 +14,7 @@
   font-family: var(--primary-font);
   font-size: 20px;
   font-weight: 600;
-  color: black;
+  color: var(--black);
   text-transform: capitalize;
 }
 
@@ -22,7 +22,7 @@
   font-family: var(--primary-font);
   font-size: 13px;
   font-weight: 400;
-  color: black;
+  color: var(--black);
 }
 
 .msggrp-wrapper {
@@ -31,6 +31,12 @@
   margin-top: 15px;
   border-bottom: 1px solid #e7e7e7;
   padding-bottom: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.msggrp-wrapper:hover {
+  background-color: rgba(231, 231, 231, 0.01);
 }
 
 .msggrp-wrapper:last-child {
@@ -53,7 +59,7 @@
   font-family: var(--primary-font);
   font-size: 17px;
   font-weight: 600;
-  color: black;
+  color: var(--black);
   text-transform: capitalize;
 }
 
@@ -68,11 +74,11 @@
   width: 20%;
 }
 
-.msggrp-btn button {
+/* .msggrp-btn button {
   width: 100%;
   border: none;
-  color: #fff;
-  background-color: var(--primary-color);
+  color: var(--white);
+  background-color: var(--blue);
   padding: 4px 0;
   border-radius: 5px;
   font-family: var(--primary-font);
@@ -80,11 +86,12 @@
   font-weight: 400;
   cursor: pointer;
   margin-bottom: 5px;
+  transition: all linear 0.3s;
 }
 
-.msggrp-btn button:last-child {
+.msggrp-btn button:hover {
   background-color: rgb(255, 62, 62);
-}
+} */
 
 .goback-btn {
   margin-top: 10px;

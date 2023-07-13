@@ -76,10 +76,18 @@ const Friends = () => {
               </h4>
             </div>
             <div className="friends-btn">
-              <button type="button" onClick={() => handleUnfrnd(item)}>
+              <button
+                className="unfriend-btn"
+                type="button"
+                onClick={() => handleUnfrnd(item)}
+              >
                 Unfriend
               </button>
-              <button type="button" onClick={() => handleBlock(item)}>
+              <button
+                className="block-btn"
+                type="button"
+                onClick={() => handleBlock(item)}
+              >
                 Block
               </button>
             </div>

@@ -73,7 +73,11 @@ const Grouplist = () => {
       <div className="grouplist-header">
         <h4>Group List</h4>
         <div className="group-creation">
-          <Button variant="text" onClick={handleOpen}>
+          <Button
+            className="grp-create-btn"
+            variant="text"
+            onClick={handleOpen}
+          >
             create group
           </Button>
         </div>

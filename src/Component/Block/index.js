@@ -64,7 +64,7 @@ const Blocklist = () => {
               <h4>{item.blockedby}</h4>
             </div>
             {!item.blockedid && (
-              <div className="userlist-btn">
+              <div className="blocked-btn">
                 <button type="button" onClick={() => handleUnblock(item)}>
                   Unblock
                 </button>

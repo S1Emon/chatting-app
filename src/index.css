@@ -23,19 +23,37 @@ li {
   --secondary-text-color: #64699d;
   --blue: #6d67e4;
   --border-color: #11175d;
+  --button-color: #0d1037;
   --error: #ea6c00;
   --white: #fff;
   --black: #000;
   --green: #00ff75;
   --secondary-white: #f1f1f1;
+  --body-color: #f9f9f9;
+  --border-color: rgba(3, 1, 76, 0.2);
+  --red-button: rgb(193, 0, 0);
+}
+
+.dark {
+  --primary-color: #001c30;
+  --body-color: #03001c;
+  --primary-text-color: #fff;
+  --black: #ddd;
+  --border-color: #fff;
+  --white: #001c30;
+  --blue: #6d67e4;
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: var(--body-color);
+}
+
+body .dark {
+  background-color: var(--body-color);
 }
 
 .main_box {
-  height: 100vh;
+  height: 102vh;
 }
 
 .error-message {

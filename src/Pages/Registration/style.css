@@ -41,6 +41,10 @@
   width: 70%;
   padding: 15px 10px !important;
   border-radius: 50px !important;
+  background-color: var(--button-color) !important;
+}
+
+.signup-btn:hover {
   background-color: var(--blue) !important;
 }
 
@@ -62,4 +66,21 @@
 
 .account p a {
   color: var(--error);
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: var(--border-color) !important;
+  color: var(--black) !important;
+}
+
+/* .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  color: var(--black) !important;
+} */
+
+.inputs input {
+  color: var(--black) !important;
+}
+
+.inputs label {
+  color: var(--black) !important;
 }

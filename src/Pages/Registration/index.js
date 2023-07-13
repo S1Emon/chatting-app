@@ -107,6 +107,16 @@ const Registration = () => {
                   onChange={formik.handleChange}
                   name="fullname"
                   value={formik.values.fullname}
+                  sx={{
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      "& > fieldset": {
+                        borderColor: "var(--border-color)",
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: "var(--black)",
+                    },
+                  }}
                 />
                 {formik.errors.fullname && formik.touched.fullname ? (
                   <p className="error-message">{formik.errors.fullname}</p>
