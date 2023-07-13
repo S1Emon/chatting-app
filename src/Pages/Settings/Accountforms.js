@@ -61,6 +61,7 @@ const Accountforms = () => {
       <div>
         <form onSubmit={formik.handleSubmit}>
           <TextField
+            className="inputs"
             label="Name"
             fullWidth
             type="text"
@@ -71,6 +72,7 @@ const Accountforms = () => {
             value={formik.values.name}
           />
           <TextField
+            className="inputs"
             label="Email"
             fullWidth
             type="email"
@@ -83,6 +85,7 @@ const Accountforms = () => {
             disabled
           />
           <TextField
+            className="inputs"
             label="New Password"
             fullWidth
             type="password"

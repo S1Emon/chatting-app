@@ -3,6 +3,8 @@ import "./style.css";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import { useDispatch, useSelector } from "react-redux";
+import { Thememode } from "../../features/Slice/themeSlice";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -52,11 +54,25 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const Darkmode = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.themeChange.DarkMode);
+
+  const handleTheme = (event) => {
+    if (event.target.checked === true) {
+      dispatch(Thememode(true));
+      localStorage.setItem("mode", true);
+    } else {
+      dispatch(Thememode(false));
+      localStorage.removeItem("mode", false);
+    }
+  };
   return (
     <>
       <div className="themes-part">
         <FormControlLabel
-          control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+          onChange={handleTheme}
+          checked={theme}
+          control={<MaterialUISwitch sx={{ m: 1 }} />}
           label="Dark"
         />
       </div>

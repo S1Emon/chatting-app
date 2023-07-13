@@ -14,8 +14,10 @@ import RootLayout from "./Layout";
 import Message from "./Pages/Message";
 import Settings from "./Pages/Settings";
 import Notifications from "./Pages/Notifications";
+import { useSelector } from "react-redux";
 
 function App() {
+  const theme = useSelector((state) => state.themeChange.DarkMode);
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
@@ -37,7 +39,7 @@ function App() {
   );
   return (
     <>
-      <div className="dark">
+      <div className={theme && "dark"}>
         <RouterProvider router={router} />
       </div>
     </>
